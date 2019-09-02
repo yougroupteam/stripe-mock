@@ -12,7 +12,15 @@ github.com/lestrrat-go/pdebug v0.0.0-20180220043849-39f9a71bcabe h1:S7XSBlgc/eI2
 github.com/lestrrat-go/pdebug v0.0.0-20180220043849-39f9a71bcabe/go.mod h1:zvUY6gZZVL2nu7NM+/3b51Z/hxyFZCZxV0hvfZ3NJlg=
 github.com/lestrrat-go/structinfo v0.0.0-20190212233437-acd51874663b h1:YUFRoeHK/mvRjBR0bBRDC7ZGygYchoQ8j1xMENlObro=
 github.com/lestrrat-go/structinfo v0.0.0-20190212233437-acd51874663b/go.mod h1:s2U6PowV3/Jobkx/S9d0XiPwOzs6niW3DIouw+7nZC8=
-github.com/pkg/errors v0.8.1-0.20170505043639-c605e284fe17 h1:+adyfd5YBtuLL2FbDEn0GitOinGeMH0levy3o62TMF0=
-github.com/pkg/errors v0.8.1-0.20170505043639-c605e284fe17/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/pkg/errors v0.0.0-20170505043639-c605e284fe17 h1:chPfVn+gpAM5CTpTyVU9j8J+xgRGwmoDlNDLjKnJiYo=
+github.com/pkg/errors v0.0.0-20170505043639-c605e284fe17/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/stretchr/testify v0.0.0-20150620232711-089c7181b8c7 h1:XTgkE916dsAohkArYaNhG4OD76I7pHVQq+0PfdST/vA=
 github.com/stretchr/testify v0.0.0-20150620232711-089c7181b8c7/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
+github.com/stripe/stripe-mock v0.65.0 h1:dPGUT6GKCpFiWL2b7KnkWb9V65G+k+RvXA7bkkRGwoU=
+github.com/stripe/stripe-mock v0.65.0/go.mod h1:bcEg3UoivdsS1pJAuXhOexRD0Fb8u2OX7w42pfuvGfs=
+github.com/xeipuuv/gojsonpointer v0.0.0-20190809123943-df4f5c81cb3b h1:6cLsL+2FW6dRAdl5iMtHgRogVCff0QpRi9653YmdcJA=
+github.com/xeipuuv/gojsonpointer v0.0.0-20190809123943-df4f5c81cb3b/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
+github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 h1:EzJWgHovont7NscjpAxXsDA8S8BMYve8Y5+7cuRE7R0=
+github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415/go.mod h1:GwrjFmJcFw6At/Gs6z4yjiIwzuJ1/+UwLxMQDVQXShQ=
+github.com/xeipuuv/gojsonschema v1.1.0 h1:ngVtJC9TY/lg0AA/1k48FYhBrhRoFlEmWzsehpNAaZg=
+github.com/xeipuuv/gojsonschema v1.1.0/go.mod h1:5yf86TLmAcydyeJq5YvxkGPE2fm/u4myDekKRoLuqhs=
