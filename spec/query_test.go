@@ -22,8 +22,7 @@ func TestBuildQuerySchema(t *testing.T) {
 		}
 		schema := BuildQuerySchema(operation)
 
-		assert.Nil(t, schema.AdditionalProperties)
-		assert.Equal(t, false, schema.AdditionalPropertiesAllowed)
+		assert.Equal(t, true, schema.AdditionalProperties)
 		assert.Equal(t, 1, len(schema.Properties))
 		assert.Equal(t, 0, len(schema.Required))
 
