@@ -5,11 +5,12 @@ import (
 	_ "embed"
 	"flag"
 	"fmt"
-	"github.com/stripe/stripe-mock/embedded"
 	"net"
 	"net/http"
 	"os"
 	"strconv"
+
+	"github.com/stripe/stripe-mock/embedded"
 
 	"github.com/stripe/stripe-mock/server"
 )
@@ -355,6 +356,34 @@ func getTLSCertificate() (tls.Certificate, error) {
 
 func getPortListener(addr string, protocol string) (net.Listener, error) {
 	listener, err := net.Listen("tcp", addr)
+	cert, err := Asset("cert.pem")
+	if err != nil {
+		return tls.Certificate{}, err
+	}
+
+	key, err := Asset("key.pem")
+	if err != nil {
+		return tls.Certificate{}, err
+	}
+
+	return tls.X509KeyPair(cert, key)
+}
+
+func getFixtures(fixturesPath string) (*spec.Fixtures, error) {
+	var data []byte
+	var err error
+
+	if fixturesPath == "" {
+		// And do the same for fixtures
+		data, err = Asset("fixtures3.json")
+	} else {
+		if !isJSONFile(fixturesPath) {
+			return nil, fmt.Errorf("Fixtures should come from a JSON file")
+		}
+
+		data, err = ioutil.ReadFile(fixturesPath)
+	}
+
 	if err != nil {
 		return nil, fmt.Errorf("error listening at address: %v", err)
 	}
@@ -376,6 +405,33 @@ func getPortListenerDefault(defaultPort int, protocol string) (net.Listener, err
 	}
 
 	return getPortListener(fmt.Sprintf(":%v", defaultPort), protocol)
+}
+
+func getSpec(specPath string) (*spec.Spec, error) {
+	var data []byte
+	var err error
+
+	if specPath == "" {
+		// Load the spec information from go-bindata
+		data, err = Asset("spec3.json")
+	} else {
+		if !isJSONFile(specPath) {
+			return nil, fmt.Errorf("spec should come from a JSON file")
+		}
+
+		data, err = ioutil.ReadFile(specPath)
+	}
+	if err != nil {
+		return nil, fmt.Errorf("error loading spec: %v", err)
+	}
+
+	var stripeSpec spec.Spec
+	err = json.Unmarshal(data, &stripeSpec)
+	if err != nil {
+		return nil, fmt.Errorf("error decoding spec: %v", err)
+	}
+
+	return &stripeSpec, nil
 }
 
 func getUnixSocketListener(unixSocket, protocol string) (net.Listener, error) {
