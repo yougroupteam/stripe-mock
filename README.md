@@ -162,6 +162,16 @@ repo.
 
 ```sh
 make update-openapi-spec
+# Make sure you have the go-bindata executable (it's not vendored into this
+# repository).
+go get -u github.com/go-bindata/go-bindata/...
+
+# Drop into the openapi/ Git submodule and update it (you may have to commit a
+# change).
+pushd openapi/ && git pull origin master && popd
+
+# Generates `bindata.go`.
+go generate
 ```
 
 ## Dependencies
