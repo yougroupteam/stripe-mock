@@ -144,7 +144,7 @@ Rebuild it with:
 ``` sh
 # Make sure you have the go-bindata executable (it's not vendored into this
 # repository).
-go get -u github.com/jteeuwen/go-bindata/...
+go get -u github.com/go-bindata/go-bindata/...
 
 # Drop into the openapi/ Git submodule and update it (you may have to commit a
 # change).
