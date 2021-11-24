@@ -356,12 +356,12 @@ func getTLSCertificate() (tls.Certificate, error) {
 
 func getPortListener(addr string, protocol string) (net.Listener, error) {
 	listener, err := net.Listen("tcp", addr)
-	cert, err := Asset("cert.pem")
+	cert, err := Asset("cert/cert.pem")
 	if err != nil {
 		return tls.Certificate{}, err
 	}
 
-	key, err := Asset("key.pem")
+	key, err := Asset("cert/key.pem")
 	if err != nil {
 		return tls.Certificate{}, err
 	}
@@ -375,7 +375,7 @@ func getFixtures(fixturesPath string) (*spec.Fixtures, error) {
 
 	if fixturesPath == "" {
 		// And do the same for fixtures
-		data, err = Asset("fixtures3.json")
+		data, err = Asset("openapi/openapi/fixtures3.json")
 	} else {
 		if !isJSONFile(fixturesPath) {
 			return nil, fmt.Errorf("Fixtures should come from a JSON file")
@@ -413,7 +413,7 @@ func getSpec(specPath string) (*spec.Spec, error) {
 
 	if specPath == "" {
 		// Load the spec information from go-bindata
-		data, err = Asset("spec3.json")
+		data, err = Asset("openapi/openapi/spec3.json")
 	} else {
 		if !isJSONFile(specPath) {
 			return nil, fmt.Errorf("spec should come from a JSON file")
